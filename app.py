@@ -21,7 +21,7 @@ def clean_text(text):
 
 # Load model and tokenizer
 model = load_model("fake_news_model.h5")
-with open("model/tokenizer.pkl", "rb") as f:
+with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
 
 max_len = 200  # MUST match training
@@ -47,3 +47,4 @@ if st.button("Predict"):
         else:
 
             st.error(f"❌ Fake News  \nConfidence: {100 - confidence}%")
+

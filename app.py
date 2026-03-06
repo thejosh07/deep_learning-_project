@@ -20,7 +20,7 @@ def clean_text(text):
     return " ".join(words)
 
 # Load model and tokenizer
-model = load_model("model/fake_news_model.h5")
+model = load_model("fake_news_model.h5")
 with open("model/tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
 
@@ -45,4 +45,5 @@ if st.button("Predict"):
         if prediction > 0.5:
             st.success(f"✅ Real News  \nConfidence: {confidence}%")
         else:
+
             st.error(f"❌ Fake News  \nConfidence: {100 - confidence}%")
